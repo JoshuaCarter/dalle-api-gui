@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,67 +8,85 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
+
 <body>
 
-<h1>Power Dall-E</h1>
+  <h1>Power Dall-E</h1>
 
-<div class="wrapper">
-  <div class="form-group">
-    <textarea id="prompt" rows="8" placeholder="prompt"></textarea>
+  <div class="wrapper">
+    <div class="form-group">
+      <textarea id="prompt" rows="8" placeholder="prompt"></textarea>
+    </div>
+    <div class="form-group-wrapper">
+
+      <div class="form-group">
+        <input type="checkbox" id="useExactPrompt" name="useExactPrompt" value="useExactPrompt"><label
+          for="useExactPrompt">~Exact prompt</label>
+      </div>
+      <div class="form-group">
+        <select id="style">
+          <option value="vivid">Vivid Style</option>
+          <option value="natural">Natural Style</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <select id="size">
+          <option value="1024x1024">⬚ Square</option>
+          <option value="1792x1024">= Horizontal</option>
+          <option value="1024x1792">|| Vertical</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <select id="quality">
+          <option value="standard">Standard Quality</option>
+          <option value="hd">HD Quality</option>
+        </select>
+      </div>
+      <div class="form-group form-group-numImages">
+        <select id="numImages">
+          <option value="1">1 image</option>
+          <option value="2">2 images</option>
+          <option value="2">3 images</option>
+          <option value="4">4 images</option>
+          <option value="5">5 images</option>
+          <option value="6">6 images</option>
+          <option value="7">7 images</option>
+          <option value="8">8 images</option>
+          <option value="9">9 images</option>
+          <option value="10">10 images</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <span id="ready">Ready: </span>
+      </div>
+    </div>
+
+    <button id="generate">
+      &#9658;
+    </button>
+
+    <div class="images" id="images"></div>
+
+    <div class="extraLinks">
+      <div class="extraLink">
+        <div id="inspirerLink" class="pseudoLink" onclick="togglePromptInspirer(event)">💡 <span>Prompt Inspirer</span>
+        </div>
+      </div>
+      <div class="extraLink">
+        <div id="searchLink" class="pseudoLink" onclick="startSearch(event)">🔎 <span>Search</span></div>
+      </div>
+      <div class="extraLink"><a href="https://platform.openai.com/usage" target="_blank" rel="noreferrer noopener">$
+          <span>Usage</span></a></div>
+      <div class="extraLink"><a href="https://openai.com/pricing" target="_blank" rel="noreferrer noopener">$
+          <span>Pricing</span></a></div>
+      <div class="extraLink"><a href="https://github.com/JPhilipp/powerdalle" target="_blank"
+          rel="noreferrer noopener">🛈 <span>About</span></a></div>
+    </div>
+
   </div>
-  <div class="form-group-wrapper">
 
-    <div class="form-group">
-      <input type="checkbox" id="useExactPrompt" name="useExactPrompt" value="useExactPrompt"><label for="useExactPrompt">~Exact prompt</label>
-    </div>
-    <div class="form-group">
-      <select id="style">
-        <option value="vivid">Vivid Style</option>
-        <option value="natural">Natural Style</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <select id="size">
-        <option value="1024x1024">⬚ Square</option>
-        <option value="1792x1024">= Horizontal</option>
-        <option value="1024x1792">|| Vertical</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <select id="quality">
-        <option value="standard">Standard Quality</option>
-        <option value="hd">HD Quality</option>
-      </select>
-    </div>
-    <div class="form-group form-group-numImages">
-      <select id="numImages">
-        <option value="1">1 image</option>
-        <option value="2">2 images</option>
-        <option value="2">3 images</option>
-        <option value="4">4 images</option>
-        <option value="5">5 images</option>
-        <option value="6">6 images</option>
-      </select>
-    </div>
-
-  </div>
-  <button id="generate">
-    &#9658;
-  </button>
-
-  <div class="images" id="images"></div>
-
-  <div class="extraLinks">
-    <div class="extraLink"><div id="inspirerLink" class="pseudoLink" onclick="togglePromptInspirer(event)">💡 <span>Prompt Inspirer</span></div></div>
-    <div class="extraLink"><div id="searchLink" class="pseudoLink" onclick="startSearch(event)">🔎 <span>Search</span></div></div>
-    <div class="extraLink"><a href="https://platform.openai.com/usage" target="_blank" rel="noreferrer noopener">$ <span>Usage</span></a></div>
-    <div class="extraLink"><a href="https://openai.com/pricing" target="_blank" rel="noreferrer noopener">$ <span>Pricing</span></a></div>
-    <div class="extraLink"><a href="https://github.com/JPhilipp/powerdalle" target="_blank" rel="noreferrer noopener">🛈 <span>About</span></a></div>
-  </div>
-
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 
 </body>
+
 </html>

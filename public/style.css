@@ -41,7 +41,7 @@ h1 {
 }
 
 .form-group-numImages {
-  display: none;
+  /* display: none; */
 }
 
 .images {
@@ -156,8 +156,13 @@ label[for="useExactPrompt"] {
 }
 
 @keyframes background-fade {
-  from { background-color: green; }
-  to { background-color: initial; }
+  from {
+    background-color: green;
+  }
+
+  to {
+    background-color: initial;
+  }
 }
 
 .copy-success {
@@ -179,8 +184,13 @@ label[for="useExactPrompt"] {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .additionalButtons {
@@ -249,7 +259,7 @@ a.additionalButtonsLink {
   height: 80%;
   z-index: 1000;
   border-radius: 10px;
-  box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
   overflow: hidden;
 }
 
@@ -310,7 +320,7 @@ a.additionalButtonsLink {
     font-size: 0.8em;
     text-align: center;
   }
-  
+
   .extraLink {
     margin: 0 10px;
   }
